@@ -6,10 +6,12 @@ resource "aws_instance" "test_ec2" {
   ami           = var.ec2_ami
   instance_type = var.ec2_type
 
-  tags = {
-    Name  = var.ec2_name
-    Extra = var.tags["Project"]
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = var.ec2_name
+    }
+  )
 
   lifecycle {
     create_before_destroy = true
