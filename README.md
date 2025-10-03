@@ -1,2 +1,0 @@
-﻿# learn-terraform-tatha
-

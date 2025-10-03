@@ -13,5 +13,4 @@ override.tf.json
 .terraform
 .terraformrc
 terraform.rc
-
 env.bat
