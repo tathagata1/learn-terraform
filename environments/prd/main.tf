@@ -20,17 +20,18 @@ terraform {
 
 module "basic_setup" {
   source               = "../../modules/basic_setup"
-ec2_type             = "t1.micro"
-ec2_name = "${"test_ec2"}_prd"
-db_allocated_storage = 10
-db_username          = "terraformuser"
-db_password          = "YourPassword123!"
-region               = "us-east-1"
-tags = {
-  Owner       = "tatha"
-  Environment = "prd"
-  Project     = "learn-terraform"
-}
+  ec2_type             = "t2.micro"
+  instance_count       = 1
+  ec2_name             = "${"test_ec2"}_prd"
+  db_allocated_storage = 10
+  db_username          = "terraformuser"
+  db_password          = "YourPassword123!"
+  region               = "us-east-1"
+  tags = {
+    Owner       = "tatha"
+    Environment = "prd"
+    Project     = "learn-terraform"
+  }
 
-ec2_ami = "ami-0c02fb55956c7d316"
+  ec2_ami = "ami-0c02fb55956c7d316"
 }

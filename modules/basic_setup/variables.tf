@@ -18,6 +18,12 @@ variable "ec2_type" {
   type        = string
 }
 
+variable "instance_count" {
+  description = "instance count"
+  type        = number
+  default = 1
+}
+
 variable "tags" {
   description = "Tags for resources"
   type        = map(string)

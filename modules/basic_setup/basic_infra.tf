@@ -5,6 +5,7 @@ provider "aws" {
 resource "aws_instance" "test_ec2" {
   ami           = var.ec2_ami
   instance_type = var.ec2_type
+  count         = var.instance_count
 
   tags = merge(
     var.tags,

@@ -26,7 +26,7 @@ resource "aws_dynamodb_table" "prd_tf_locks" {
 
 }
 
-#prd
+#uat
 resource "aws_s3_bucket" "uat_tf_state" {
   bucket        = "uat-tf-state-bucket-tatha-20250930"
   force_destroy = true
@@ -41,5 +41,4 @@ resource "aws_dynamodb_table" "uat_tf_locks" {
     name = "LockID"
     type = "S"
   }
-
 }

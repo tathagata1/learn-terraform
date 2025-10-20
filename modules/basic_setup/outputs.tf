@@ -1,11 +1,11 @@
 output "ec2_pub_ip_address" {
   description = "The public IP address of the EC2 instance"
-  value       = aws_instance.test_ec2.public_ip
+  value       = [for instance in aws_instance.test_ec2 : instance.public_ip]
 }
 
 output "ec2_priv_ip_address" {
   description = "The private IP address of the EC2 instance"
-  value       = aws_instance.test_ec2.private_ip
+  value       = [for instance in aws_instance.test_ec2 : instance.private_ip]
 }
 
 output "db_address" {
