@@ -1,10 +1,10 @@
 terraform {
 
   backend "s3" {
-    bucket         = "prd-tf-state-bucket-tatha-20250930"
+    bucket         = "env-folders-prd-tf-state-bucket-tatha-20250930"
     key            = "global/s3/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "prd-tf-locks-table"
+    dynamodb_table = "env-folders-prd-tf-locks-table"
     encrypt        = true
   }
 

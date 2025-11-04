@@ -43,3 +43,23 @@ variable "db_password" {
   type      = string
   sensitive = true
 }
+
+variable "my_vpc_tag" {
+  description = "Tag for VPC"
+  type        = string
+}
+
+variable "my_subnet_tag" {
+  description = "Tag for Subnet"
+  type        = string
+}
+
+variable "vpc_cidr_block" {
+  description = "CIDR block for VPC"
+  type        = string
+}
+
+variable "subnet_cidr_block" {
+  description = "CIDR block for Subnet"
+  type        = string
+}

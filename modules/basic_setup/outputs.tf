@@ -17,3 +17,8 @@ output "db_port" {
   description = "The IP address of the DB instance"
   value       = aws_db_instance.db.port
 }
+
+output "vpc_id" {
+  description = "The ID of the VPC"
+  value       = aws_vpc.my-vpc.id
+}
