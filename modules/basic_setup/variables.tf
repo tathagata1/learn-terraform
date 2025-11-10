@@ -21,7 +21,7 @@ variable "ec2_type" {
 variable "instance_count" {
   description = "instance count"
   type        = number
-  default = 1
+  default     = 1
 }
 
 variable "tags" {

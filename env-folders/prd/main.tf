@@ -1,11 +1,11 @@
 terraform {
 
   backend "s3" {
-    bucket         = "env-folders-prd-tf-state-bucket-tatha-20250930"
-    key            = "global/s3/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "env-folders-prd-tf-locks-table"
-    encrypt        = true
+    bucket       = "env-folders-prd-tf-state-bucket-tatha-20250930"
+    key          = "global/s3/terraform.tfstate"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
   }
 
 
@@ -33,5 +33,9 @@ module "basic_setup" {
     Project     = "learn-terraform"
   }
 
-  ec2_ami = "ami-0c02fb55956c7d316"
+  ec2_ami           = "ami-0c02fb55956c7d316"
+  my_vpc_tag        = "stg_vpc"
+  my_subnet_tag     = "stg_subnet"
+  vpc_cidr_block    = "10.2.0.0/16"
+  subnet_cidr_block = "10.2.1.0/24"
 }
